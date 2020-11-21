@@ -1,0 +1,19 @@
+[
+  [
+    [
+      {
+        "Plan": {
+          "Node Type": "Seq Scan",
+          "Parallel Aware": false,
+          "Relation Name": "csv_100",
+          "Alias": "csv_100",
+          "Startup Cost": 0.0,
+          "Total Cost": 3.25,
+          "Plan Rows": 57,
+          "Plan Width": 103,
+          "Filter": "(c3 > 0)"
+        }
+      }
+    ]
+  ]
+]
