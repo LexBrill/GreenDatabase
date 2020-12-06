@@ -13,7 +13,7 @@ explain_query = "EXPLAIN (FORMAT JSON) " + query
 
 con = psycopg2.connect(
     host = "localhost",
-    database = "test",
+    database = "key_tables",
     user = "lexingtonbrill",
     password = "")
 

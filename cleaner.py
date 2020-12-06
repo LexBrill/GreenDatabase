@@ -68,5 +68,19 @@ while i <= trial_amount:
     os.system("rm projection_mem_30000_" + str(i) + ".txt")
     os.system("rm projection_mem_60000_" + str(i) + ".txt")
     os.system("rm projection_mem_100000_" + str(i) + ".txt")
+
+    os.system("rm join_cpu_100_" + str(i) + ".txt")
+    os.system("rm join_cpu_1000_" + str(i) + ".txt")
+    os.system("rm join_cpu_10000_" + str(i) + ".txt")
+    os.system("rm join_cpu_30000_" + str(i) + ".txt")
+    os.system("rm join_cpu_60000_" + str(i) + ".txt")
+    os.system("rm join_cpu_100000_" + str(i) + ".txt")
+    
+    os.system("rm join_mem_100_" + str(i) + ".txt")
+    os.system("rm join_mem_1000_" + str(i) + ".txt")
+    os.system("rm join_mem_10000_" + str(i) + ".txt")
+    os.system("rm join_mem_30000_" + str(i) + ".txt")
+    os.system("rm join_mem_60000_" + str(i) + ".txt")
+    os.system("rm join_mem_100000_" + str(i) + ".txt")
     
     i += 1

@@ -7,7 +7,7 @@ import time
 operation_type = sys.argv[1].lower()
 test_query = ""
 csv_rows = sys.argv[2]
-table_name = "csv_" + csv_rows
+table_name = "key_" + csv_rows
 
 if operation_type == "sort":
     test_query = "SELECT * FROM " + table_name + " ORDER BY c1"
@@ -18,12 +18,13 @@ elif operation_type == "selection":
 elif operation_type == "projection":
     test_query = "SELECT c1 FROM " + table_name
 elif operation_type == "join":
-    test_query = "SELECT * FROM " + table_name + " JOIN " + table_name + "b ON " + table_name + ".c1 = " + table_name + "b.c1"
+    # Ensure that the column selected has a unique index. Otherwise the query will time-out
+    test_query = "SELECT * FROM " + table_name + " JOIN " + table_name + "b ON " + table_name + ".c14 = " + table_name + "b.c14"
 
 
 con = psycopg2.connect(
     host = "localhost",
-    database = "test",
+    database = "key_tables",
     user = "lexingtonbrill",
     password = "")
 
