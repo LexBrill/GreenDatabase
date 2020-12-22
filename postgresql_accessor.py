@@ -9,7 +9,7 @@ i = 1
 
 con = psycopg2.connect(
     host = "localhost",
-    database = "key_tables",
+    database = "tpcds",
     user = "lexingtonbrill",
     password = "")
 

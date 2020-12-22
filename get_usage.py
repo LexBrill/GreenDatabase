@@ -15,6 +15,7 @@ second_query = None
 
 if "Plans" in data[0][0][0]["Plan"]:
     second_query = (data[0][0][0]["Plan"]["Plans"][0]["Node Type"], data[0][0][0]["Plan"]["Plans"][0]["Plan Rows"])
+    
 
 if first_query[0] == "Aggregate":
     cpuTotal += predict_usage.getResult("hash", "cpu", int(first_query[1]))
