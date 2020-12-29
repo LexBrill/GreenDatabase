@@ -11,6 +11,7 @@ i = 1
 os.system("rm CPU_Data.txt")
 os.system("rm processed_data.txt")
 os.system("rm outp.json")
+os.system("rm top.txt")
 
 while i <= trial_amount:
     os.system("rm sort_cpu_100_" + str(i) + ".txt")
