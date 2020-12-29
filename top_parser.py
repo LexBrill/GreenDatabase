@@ -12,7 +12,7 @@ while line:
     if index % 13 == 0:
         line = line.strip()
         total_energy += float(line)
-        print(line)
+        # print(line)
     index += 1
     line = fp.readline()
 
