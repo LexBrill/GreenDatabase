@@ -45,9 +45,6 @@ def get_info(query_type):
 
 
 line = fp.readline()
-line = fp.readline()
-line = fp.readline()
-line = "->  " + line
 while line:
     line = line.strip()
     if line[0:2] == "->":
