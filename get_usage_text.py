@@ -56,7 +56,7 @@ while line:
             pass
 
         elif query_type[0] == "gather":
-            if query_type[1] == "merge":
+            if len(query_type) > 1 and query_type[1] == "merge":
                 get_info("selection")
 
         elif query_type[0] == "parallel":
@@ -84,11 +84,17 @@ while line:
         elif query_type[0] == "sort":
             get_info("sort")
 
+        elif query_type[0] == "subquery":
+            get_info("selection")
+
+        elif query_type[0] == "unique":
+            get_info("hash")
+
     line = fp.readline()
 
-print(str(cpuTotal))
-print(str(maxMax))
-print(str(memTotal))
+print("CPU TOTAL: " + str(cpuTotal))
+print("MAX CPU: " + str(maxMax))
+print("MEM TOTAL: " + str(memTotal))
         
 
 
