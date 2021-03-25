@@ -85,3 +85,6 @@ while i <= trial_amount:
     os.system("rm join_mem_100000_" + str(i) + ".txt")
     
     i += 1
+
+for num in range(1, 100):
+    os.system("rm text_explain_query" + str(num) + ".txt")
