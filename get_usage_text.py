@@ -40,10 +40,10 @@ def get_info(query_type):
         maxMax = max(maxMax, maxTemp)
         memTotal += predict_usage.getResult("projection", "mem", rows)
     elif query_type == "join":
-        cpuTotal += predict_usage.getResult("join", "cpu", (rows + (sum(seq_scan_average) * l_weight)) / (1+len(seq_scan_average)))
-        maxTemp = predict_usage.getResult("join", "max", (rows + (sum(seq_scan_average) * l_weight)) / (1+len(seq_scan_average)))
+        cpuTotal += predict_usage.getResult("join", "cpu", (rows + (sum(seq_scan_average) * l_weight)))
+        maxTemp = predict_usage.getResult("join", "max", (rows + (sum(seq_scan_average) * l_weight)))
         maxMax = max(maxMax, maxTemp)
-        memTotal += predict_usage.getResult("join", "mem", (rows + (sum(seq_scan_average) * l_weight)) / (1+len(seq_scan_average)))
+        memTotal += predict_usage.getResult("join", "mem", (rows + (sum(seq_scan_average) * l_weight)))
 
 
 delayed_calculation = []

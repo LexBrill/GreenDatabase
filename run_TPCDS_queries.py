@@ -36,7 +36,7 @@ con.close()
 
 for num in range(1, 100):
     if num not in bad_queries:
-        print(str(num))
+        # print(str(num))
         os.system("python3 get_usage_text.py text_explain_query" + str(num) + ".txt")
     else:
         print()
