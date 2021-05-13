@@ -36,12 +36,17 @@ for element in from_list:
 num = 0
 for element in predicates:
     where_bool = True
-    conditional = element["left"] + " " + element["op"] + " " + element["right"]
     if num > 0:
         sql_where += " AND "
+    conditional = element["left"] + " " + element["op"] + " " + element["right"]
     sql_where += conditional
-# for element in conditions:
-#     conditional 
+    num += 1
+for element in conditions:
+    if num > 0:
+        sql_where += " AND "
+    conditional = element + " = " + conditions[element][0]["table"] + "." + conditions[element][0]["column"]
+    sql_where += conditional
+    num += 1
 
 final_query = ""
 if select_bool:
