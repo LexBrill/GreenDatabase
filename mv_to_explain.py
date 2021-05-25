@@ -15,14 +15,14 @@ con = psycopg2.connect(
 )
 cur = con.cursor()
 
-outputFile = open("mv" + str(index_num) + ".txt", "w")
+outputFile = open("mvs/mv" + str(index_num) + ".txt", "w")
 cur.execute("EXPLAIN (FORMAT TEXT) " + sql_query)
 rows = cur.fetchall()
 rows_string = ""
 for tup in rows:
     rows_string += str(tup[0]) + "\n"
 n = outputFile.write(rows_string)
-print("Done with query " + str(index_num))
+print("Query " + str(index_num))
 
 cur.close()
 con.close()

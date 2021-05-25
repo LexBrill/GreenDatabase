@@ -115,11 +115,11 @@ while line:
 
     line = fp.readline()
 
-# print("CPU TOTAL: " + str(cpuTotal))
-# print("MAX CPU: " + str(maxMax))
-# print("MEM TOTAL: " + str(memTotal))
+print("CPU TOTAL: " + str(cpuTotal))
+print("MAX CPU: " + str(maxMax))
+print("MEM TOTAL: " + str(memTotal))
         
 
-print(str(cpuTotal))
+# print(str(cpuTotal))
 
 
