@@ -6,7 +6,7 @@ import os
 fileName = sys.argv[1]
 json_file = open(fileName)
 large_json = json.load(json_file)
-mv_index = 0
+# mv_index = 0
 for data in large_json:
     sql_select = "SELECT "
     select_bool = False
@@ -64,11 +64,12 @@ for data in large_json:
     if where_bool:
         final_query += " " + sql_where
     final_query += ";"
+    # print(data["mvName"])
     # print(final_query)
     try:
-        os.system("python3 mv_to_explain.py \"" + final_query + "\" " + str(mv_index))
-        os.system("python3 get_usage_text.py mvs/mv" + str(mv_index) + ".txt")
+        os.system("python3 mv_to_explain.py \"" + final_query + "\" " + data["mvName"])
+        os.system("python3 get_usage_text.py mvs/mv" + data["mvName"] + ".txt")
     except:
         pass
-    mv_index += 1
+    # mv_index += 1
     # time.sleep(3)

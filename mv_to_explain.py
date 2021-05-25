@@ -5,7 +5,7 @@ import subprocess
 import time
 
 sql_query = sys.argv[1]
-index_num = int(sys.argv[2])
+mvName = sys.argv[2]
 
 con = psycopg2.connect(
     host = "localhost",
@@ -15,14 +15,14 @@ con = psycopg2.connect(
 )
 cur = con.cursor()
 
-outputFile = open("mvs/mv" + str(index_num) + ".txt", "w")
+outputFile = open("mvs/mv" + mvName + ".txt", "w")
 cur.execute("EXPLAIN (FORMAT TEXT) " + sql_query)
 rows = cur.fetchall()
 rows_string = ""
 for tup in rows:
     rows_string += str(tup[0]) + "\n"
 n = outputFile.write(rows_string)
-print("Query " + str(index_num))
+print(mvName)
 
 cur.close()
 con.close()
